@@ -1,19 +1,22 @@
-
 {
-  "name": "react-native-lock-task",
+  "name": "@joshstaff_/react-native-lock-task",
   "version": "1.2.0",
-  "description": "",
+  "description": "## Getting started",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/joshstaff_/react-native-lock-taskt"
+    "type": "git",
+    "url": "git+https://github.com/joshstaff_/react-native-lock-task.git"
   },
   "license": "MIT",
   "keywords": [
     "react-native"
   ],
-  "author": ""
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/joshstaff_/react-native-lock-task/issues"
+  },
+  "homepage": "https://github.com/joshstaff_/react-native-lock-task#readme"
 }
