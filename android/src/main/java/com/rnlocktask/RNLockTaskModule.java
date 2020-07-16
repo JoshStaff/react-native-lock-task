@@ -16,6 +16,8 @@ import com.facebook.react.bridge.Callback;
 public class RNLockTaskModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
+  private static final String REMOTE_ASSIST_PACKAGE = "com.logmein.rescueassist";
+
 
   public RNLockTaskModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -28,7 +30,7 @@ public class RNLockTaskModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public  void clearDeviceOwnerApp() {
+  public void clearDeviceOwnerApp() {
     try {
       Activity mActivity = reactContext.getCurrentActivity();
       if (mActivity != null) {
@@ -48,7 +50,7 @@ public class RNLockTaskModule extends ReactContextBaseJavaModule {
         ComponentName mDPM = new ComponentName(mActivity, MyAdmin.class);
 
         if (myDevicePolicyManager.isDeviceOwnerApp(mActivity.getPackageName())) {
-          String[] packages = {mActivity.getPackageName()};
+          String[] packages = {mActivity.getPackageName(), REMOTE_ASSIST_PACKAGE};
           myDevicePolicyManager.setLockTaskPackages(mDPM, packages);
           mActivity.startLockTask();
         } else {
@@ -60,7 +62,7 @@ public class RNLockTaskModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public  void stopLockTask() {
+  public void stopLockTask() {
     try {
       Activity mActivity = reactContext.getCurrentActivity();
       if (mActivity != null) {
